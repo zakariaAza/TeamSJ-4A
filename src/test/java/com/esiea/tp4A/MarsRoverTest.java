@@ -39,7 +39,17 @@ public class MarsRoverTest {
     @ParameterizedTest
     @CsvSource({
         "0, 50, NORTH, 'f', 0, -49, NORTH",
-        "50, 0, NORTH, 'rf', -49, 0, EAST"
+        "50, 0, NORTH, 'rf', -49, 0, EAST",
+        "0, 50, SOUTH, 'b', 0, -49, SOUTH",
+        "50, 0, SOUTH, 'lf', -49,0, EAST",
+        "0, 50, WEST, 'lf', 0, 49, SOUTH",
+        "50, 0, WEST, rrf, -49, 0, EAST",
+        "0, 50, EAST, rb, 0, -49, SOUTH",
+        "50, 0, EAST, 'f', -49, 0, EAST",
+        "30, 20, EAST, 'lf', 30, 21, NORTH",
+        "-40, 10, WEST, 'lb', -40, 11, SOUTH",
+        "25, 0, SOUTH, 'fflb', 24, -2, EAST"
+
     })
     void rover_limit_positions(int givenX, int givenY, Direction givenDirection, String command, int expectedX, int expectedY, Direction expectedDirection){
         Mars mars = new Mars(100, Stream.of(new PointXY(0,1)).collect(Collectors.toSet()));
