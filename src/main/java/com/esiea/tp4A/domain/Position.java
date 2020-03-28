@@ -1,6 +1,6 @@
 package com.esiea.tp4A.domain;
 
-public interface Position {
+public interface    Position {
 
     int getX();
     int getY();

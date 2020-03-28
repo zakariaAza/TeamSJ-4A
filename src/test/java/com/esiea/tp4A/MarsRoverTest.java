@@ -49,6 +49,21 @@ public class MarsRoverTest {
             .isEqualTo(List.of(expectedX, expectedY, expectedDirection));
     }
 
+
+    @ParameterizedTest
+    @CsvSource({
+        "0, 50, NORTH, 'f', 0, -49, NORTH",
+        "50, 0, NORTH, 'rf', -49, 0, EAST"
+    })
+    void rover_detect_obstacles(int givenX, int givenY, Direction givenDirection, String command, int expectedX, int expectedY, Direction expectedDirection){
+        Mars mars = new Mars(100, Stream.of(new PointXY(0,1)).collect(Collectors.toSet()));
+        MarsRover marsRover = new MyRover(givenX,givenY, givenDirection, mars);
+        Position newPosition = marsRover.move(command);
+        Assertions.assertThat(newPosition).as("rover_detect_obstacles").extracting(Position::getX,Position::getY,Position::getDirection)
+            .isEqualTo(List.of(expectedX, expectedY, expectedDirection));
+    }
+
+
     @Test
     void rover_laser_shoot(){
         Mars mars = new Mars(100, Stream.of(new PointXY(0,5)).collect(Collectors.toSet()));
