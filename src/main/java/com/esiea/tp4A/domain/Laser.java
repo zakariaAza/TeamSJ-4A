@@ -12,6 +12,7 @@ public class Laser {
     public PointXY shoot(Position roverPosition){
         Position laser_position = roverPosition;
         Set<PointXY> obstacles = roverPosition.getPlanet().obstaclePositions();
+
         for (int i = 0; i < range; i++) {
             laser_position = laser_position.forward();
             PointXY pointXY = new PointXY(laser_position.getX(), laser_position.getY());
