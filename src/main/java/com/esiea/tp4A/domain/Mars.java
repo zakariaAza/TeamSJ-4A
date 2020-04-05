@@ -5,9 +5,9 @@ import java.util.Set;
 
 public class Mars implements PlanetMap {
 
-    private int size = 100;
-    private int limit_pos = 0;
-    private int limit_neg = 0;
+    private final int size;
+    private final int limit_pos;
+    private final int limit_neg;
     private Set<PointXY> obstacles = new HashSet<>();
 
     public Mars(int size, Set<PointXY> obstacles) {

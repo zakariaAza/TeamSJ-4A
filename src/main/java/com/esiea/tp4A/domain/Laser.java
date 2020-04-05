@@ -3,16 +3,15 @@ package com.esiea.tp4A.domain;
 import java.util.Set;
 
 public class Laser {
-    private int range;
-    private PlanetMap planet;
-    private RoverPosition roverPosition;
-    private MyRover myRover;
+    private final int range;
+    private final PlanetMap planet;
+    private final RoverPosition roverPosition;
+    private final MyRover myRover;
 
     public Laser(int range, PlanetMap planet, MyRover myRover) {
         this.range = range;
         this.planet = planet;
         this.roverPosition = new RoverPosition(planet);
-        this.roverPosition.setPassCheck(true);
         this.myRover = myRover;
     }
 
@@ -20,7 +19,7 @@ public class Laser {
         Position laser_position = roverPosition;
         Set<PointXY> obstacles = this.planet.obstaclePositions();
         for (int i = 0; i < range; i++) {
-            laser_position = this.roverPosition.forward(laser_position);
+            laser_position = this.roverPosition.forward(laser_position, true);
             if(myRover.dealShot(laser_position)) return;
         }
     }

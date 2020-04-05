@@ -2,11 +2,12 @@ package com.esiea.tp4A.domain;
 
 public class MyRover implements MarsRover {
     private Position position;
-    private RoverPosition roverPosition;
-    private PlanetMap mars;
-    private Laser laser;
+    private final RoverPosition roverPosition;
+    private final PlanetMap mars;
+    private final Laser laser;
     public MyRover(int x, int y, Direction direction, PlanetMap planet) {
-        updateMap(planet);
+        this.mars = planet;
+        this.roverPosition = new RoverPosition(planet);
         initialize(Position.of(x, y, direction));
         laser = new Laser(5, planet, this);
     }
@@ -23,7 +24,6 @@ public class MyRover implements MarsRover {
 
     @Override
     public MarsRover updateMap(PlanetMap map) {
-        this.mars = map; this.roverPosition = new RoverPosition(map);
         return this;
     }
 

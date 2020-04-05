@@ -1,8 +1,8 @@
 package com.esiea.tp4A.domain;
 
 public class PointXY {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public PointXY(int x, int y) {
         this.x = x;

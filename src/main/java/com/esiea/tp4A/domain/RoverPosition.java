@@ -1,19 +1,14 @@
 package com.esiea.tp4A.domain;
 
 public class RoverPosition{
-    private PlanetMap planet;
-    private boolean passCheck = false;
+    private final PlanetMap planet;
     public RoverPosition(PlanetMap planet) {
         this.planet = planet;
     }
 
-    public void setPassCheck(boolean passCheck) {
-        this.passCheck = passCheck;
-    }
-
     public Position commandSwitch(char command, Position position){
         switch (command){
-            case 'f' : return forward(position);
+            case 'f' : return forward(position, false);
             case 'b' : return backward(position);
             case 'l' : return left(position);
             case 'r' : return right(position);
@@ -21,14 +16,18 @@ public class RoverPosition{
         }
     }
 
-    public Position forward(Position position) {
+    public Position forward(Position position, boolean passCheck) {
+        Position calc_position;
         switch (position.getDirection()){
-            case NORTH: return checkObstacle(position, Position.of(generateMapPosition(position.getX()), generateMapPosition(position.getY()+1), position.getDirection()));
-            case EAST: return checkObstacle(position, Position.of(generateMapPosition(position.getX()+1), generateMapPosition(position.getY()), position.getDirection()));
-            case WEST: return checkObstacle(position, Position.of(generateMapPosition(position.getX()-1), generateMapPosition(position.getY()), position.getDirection()));
-            case SOUTH: return checkObstacle(position, Position.of(generateMapPosition(position.getX()), generateMapPosition(position.getY()-1), position.getDirection()));
+            case NORTH: calc_position = Position.of(generateMapPosition(position.getX()), generateMapPosition(position.getY()+1), position.getDirection()); break;
+            case EAST: calc_position = Position.of(generateMapPosition(position.getX()+1), generateMapPosition(position.getY()), position.getDirection()); break;
+            case WEST: calc_position = Position.of(generateMapPosition(position.getX()-1), generateMapPosition(position.getY()), position.getDirection()); break;
+            case SOUTH: calc_position = Position.of(generateMapPosition(position.getX()), generateMapPosition(position.getY()-1), position.getDirection()); break;
+            default: calc_position = null;
         }
-        throw new IllegalStateException("No Move From Direction : " + position.getDirection());
+        if(calc_position == null)throw new IllegalStateException("No Move From Direction : " + position.getDirection());
+        if(passCheck) return calc_position;
+        else return checkObstacle(position, calc_position);
     }
     public Position backward(Position position) {
         switch (position.getDirection()){
@@ -45,7 +44,6 @@ public class RoverPosition{
     public Position right(Position position) { return checkObstacle(position, Position.of(position.getX(), position.getY(), position.getDirection().right())); }
 
     public Position checkObstacle(Position initial_position, Position calculated_position){
-        if(passCheck) return calculated_position;
         if(this.planet.isObstacle(calculated_position)) return initial_position;
         else return calculated_position;
     }
