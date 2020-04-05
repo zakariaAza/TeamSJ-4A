@@ -37,4 +37,12 @@ public class Mars implements PlanetMap {
     public int getLimit_neg() {
         return limit_neg;
     }
+
+    @Override
+    public boolean isObstacle(Position temp_position) {
+        for(PointXY point : this.obstacles){
+            if(point.comparePosition(temp_position)) return true;
+        }
+        return false;
+    }
 }

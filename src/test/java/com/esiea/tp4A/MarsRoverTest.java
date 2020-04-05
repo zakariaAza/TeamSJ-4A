@@ -15,18 +15,18 @@ public class MarsRoverTest {
     @ParameterizedTest
     @CsvSource({
         "'', 0, 0, NORTH",
-        "'f', 0, 1, NORTH",
+        "'f', 0, 0, NORTH",
         "'b', 0, -1, NORTH",
         "'l', 0, 0, WEST",
         "'r', 0, 0, EAST",
-        "'ff', 0, 2, NORTH",
+        "'ff', 0, 0, NORTH",
         "'lf', -1, 0, WEST",
         "'rf', 1, 0, EAST",
         "'bb', 0, -2, NORTH",
         "'lb', 1, 0, WEST",
-        "'llb', 0, 1, SOUTH",
+        "'llb', 0, 0, SOUTH",
         "'rb', -1, 0, EAST",
-        "'fflb', 1, 2, WEST",
+        "'fflb', 1, 0, WEST",
     })
     void rover_stays_at_initial_position(String command, int expectedX, int expectedY, Direction expectedDirection){
         Mars mars = new Mars(100, Stream.of(new PointXY(0,1)).collect(Collectors.toSet()));

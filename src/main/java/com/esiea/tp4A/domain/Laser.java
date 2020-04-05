@@ -4,24 +4,34 @@ import java.util.Set;
 
 public class Laser {
     private int range;
+    private PlanetMap planet;
+    private RoverPosition roverPosition;
+    private MyRover myRover;
 
-    public Laser(int range) {
+    public Laser(int range, PlanetMap planet, MyRover myRover) {
         this.range = range;
+        this.planet = planet;
+        this.roverPosition = new RoverPosition(planet);
+        this.roverPosition.setPassCheck(true);
+        this.myRover = myRover;
     }
 
-    public PointXY shoot(Position roverPosition){
+    public void shoot(Position roverPosition){
         Position laser_position = roverPosition;
-        Set<PointXY> obstacles = roverPosition.getPlanet().obstaclePositions();
+        Set<PointXY> obstacles = this.planet.obstaclePositions();
+        for (int i = 0; i < range; i++) {
+            laser_position = this.roverPosition.forward(laser_position);
+            if(myRover.dealShot(laser_position)) return;
+        }
+    }
 
+    /*private PointXY moveLaserPoint(Position roverPosition, Position laser_position, Set<PointXY> obstacles){
         for (int i = 0; i < range; i++) {
             laser_position = laser_position.forward();
             PointXY pointXY = new PointXY(laser_position.getX(), laser_position.getY());
-            for (PointXY pXY : obstacles) {
-                if(pXY.comparePosition(laser_position)) return pXY;
-            }
-            //if(obstacles.contains(pointXY)) return pointXY;
+            for (PointXY pXY : obstacles) if(pXY.comparePosition(laser_position)) return pXY;
             if(pointXY.comparePosition(roverPosition)) return new PointXY(roverPosition.getX(), roverPosition.getY());
         }
         return null;
-    }
+    }*/
 }

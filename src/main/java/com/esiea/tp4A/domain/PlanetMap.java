@@ -9,4 +9,5 @@ public interface PlanetMap {
     int getSize();
     int getLimit_pos();
     int getLimit_neg();
+    boolean isObstacle(Position temp_position);
 }
