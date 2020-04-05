@@ -2,7 +2,6 @@ package com.esiea.tp4A;
 
 import com.esiea.tp4A.domain.*;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -29,8 +28,8 @@ public class MarsRoverTest {
         "'fflb', 1, 0, WEST",
     })
     void rover_stays_at_initial_position(String command, int expectedX, int expectedY, Direction expectedDirection){
-        Mars mars = new Mars(100, Stream.of(new PointXY(0,1)).collect(Collectors.toSet()));
-        MarsRover marsRover = new MyRover(0,0, Direction.NORTH,mars);
+        Mars mars = new Mars(100, Stream.of(new Obstacle(0,1)).collect(Collectors.toSet()));
+        MarsRover marsRover = new MyRover(0,0, Direction.NORTH, 5, mars);
         Position newPosition = marsRover.move(command);
         Assertions.assertThat(newPosition).as("rover_stays_at_initial_position").extracting(Position::getX,Position::getY,Position::getDirection)
             .isEqualTo(List.of(expectedX, expectedY,expectedDirection));
@@ -52,8 +51,8 @@ public class MarsRoverTest {
     })
 
     void rover_limit_positions(int givenX, int givenY, Direction givenDirection, String command, int expectedX, int expectedY, Direction expectedDirection){
-        Mars mars = new Mars(100, Stream.of(new PointXY(0,1)).collect(Collectors.toSet()));
-        MarsRover marsRover = new MyRover(givenX,givenY, givenDirection, mars);
+        Mars mars = new Mars(100, Stream.of(new Obstacle(0,1)).collect(Collectors.toSet()));
+        MarsRover marsRover = new MyRover(givenX,givenY, givenDirection, 5, mars);
         Position newPosition = marsRover.move(command);
         Assertions.assertThat(newPosition).as("rover_limit_positions").extracting(Position::getX,Position::getY,Position::getDirection)
             .isEqualTo(List.of(expectedX, expectedY, expectedDirection));
@@ -74,8 +73,8 @@ public class MarsRoverTest {
     })
 
     void rover_detect_obstacles(int givenX, int givenY, Direction givenDirection, String command, int expectedX, int expectedY, Direction expectedDirection){
-        Mars mars = new Mars(100, Stream.of(new PointXY(0,-49),new PointXY(-49,0),new PointXY(0,49),new PointXY(-40,11),new PointXY(24,-2)).collect(Collectors.toSet()));
-        MarsRover marsRover = new MyRover(givenX,givenY, givenDirection, mars);
+        Mars mars = new Mars(100, Stream.of(new Obstacle(0,-49),new Obstacle(-49,0),new Obstacle(0,49),new Obstacle(-40,11),new Obstacle(24,-2)).collect(Collectors.toSet()));
+        MarsRover marsRover = new MyRover(givenX,givenY, givenDirection, 5, mars);
         Position newPosition = marsRover.move(command);
         Assertions.assertThat(newPosition).as("rover_detect_obstacles").extracting(Position::getX,Position::getY,Position::getDirection)
             .isEqualTo(List.of(expectedX, expectedY, expectedDirection));
@@ -99,8 +98,8 @@ public class MarsRoverTest {
     })
 
     void rover_laser_shoot(int givenX, int givenY, Direction givenDirection, String command, int expectedX, int expectedY, Direction expectedDirection){
-        Mars mars = new Mars(100, Stream.of(new PointXY(0,5), new PointXY(0,6)).collect(Collectors.toSet()));
-        MarsRover marsRover = new MyRover(givenX, givenY, givenDirection,mars);
+        Mars mars = new Mars(100, Stream.of(new Obstacle(0,5), new Obstacle(0,6)).collect(Collectors.toSet()));
+        MarsRover marsRover = new MyRover(givenX, givenY, givenDirection, 5, mars);
         Position newPosition = marsRover.move(command);
         Assertions.assertThat(newPosition).as("rover_laser_shoot").extracting(Position::getX,Position::getY,Position::getDirection)
             .isEqualTo(List.of(expectedX, expectedY, expectedDirection));

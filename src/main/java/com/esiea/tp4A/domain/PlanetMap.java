@@ -4,8 +4,8 @@ import java.util.Set;
 
 public interface PlanetMap {
 
-    Set<PointXY> obstaclePositions();
-    void removeObstacle(PointXY pointXY);
+    Set<Obstacle> obstaclePositions();
+    void removeObstacle(Obstacle obstacle);
     int getSize();
     int getLimit_pos();
     int getLimit_neg();

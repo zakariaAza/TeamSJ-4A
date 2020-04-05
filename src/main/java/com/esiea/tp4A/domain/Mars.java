@@ -8,9 +8,9 @@ public class Mars implements PlanetMap {
     private final int size;
     private final int limit_pos;
     private final int limit_neg;
-    private Set<PointXY> obstacles = new HashSet<>();
+    private Set<Obstacle> obstacles = new HashSet<>();
 
-    public Mars(int size, Set<PointXY> obstacles) {
+    public Mars(int size, Set<Obstacle> obstacles) {
         this.size = size;
         this.limit_pos = size/2;
         this.limit_neg = 0 - this.limit_pos + 1;
@@ -18,12 +18,12 @@ public class Mars implements PlanetMap {
     }
 
     @Override
-    public Set<PointXY> obstaclePositions() {
+    public Set<Obstacle> obstaclePositions() {
         return this.obstacles;
     }
 
-    public void removeObstacle(PointXY pointXY){
-        this.obstacles.remove(pointXY);
+    public void removeObstacle(Obstacle obstacle){
+        this.obstacles.remove(obstacle);
     }
 
     public int getSize() {
@@ -40,7 +40,7 @@ public class Mars implements PlanetMap {
 
     @Override
     public boolean isObstacle(Position temp_position) {
-        for(PointXY point : this.obstacles){
+        for(Obstacle point : this.obstacles){
             if(point.comparePosition(temp_position)) return true;
         }
         return false;

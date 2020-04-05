@@ -5,11 +5,11 @@ public class MyRover implements MarsRover {
     private final RoverPosition roverPosition;
     private final PlanetMap mars;
     private final Laser laser;
-    public MyRover(int x, int y, Direction direction, PlanetMap planet) {
+    public MyRover(int x, int y, Direction direction, int laserRange, PlanetMap planet) {
         this.mars = planet;
         this.roverPosition = new RoverPosition(planet);
         initialize(Position.of(x, y, direction));
-        laser = new Laser(5, planet, this);
+        laser = new Laser(laserRange, planet, this);
     }
 
     @Override
@@ -33,10 +33,14 @@ public class MyRover implements MarsRover {
         return this;
     }
 
+    public Position getPosition() {
+        return position;
+    }
+
     public boolean dealShot(Position position){ // doit être remonter pour la 2nd séance
         if(this.mars.isObstacle(position)){
-            this.mars.removeObstacle(new PointXY(position.getX(), position.getY())); return true;
-        }else if(new PointXY(position.getX(), position.getY()).comparePosition(this.position)){ // player hit by his own laser
+            this.mars.removeObstacle(new Obstacle(position.getX(), position.getY())); return true;
+        }else if(new Obstacle(position.getX(), position.getY()).comparePosition(this.position)){ // player hit by his own laser
             return false;
         }else return false;
     }
