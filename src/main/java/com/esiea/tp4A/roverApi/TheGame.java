@@ -1,11 +1,9 @@
 package com.esiea.tp4A.roverApi;
 
-import com.esiea.tp4A.domain.Mars;
-import com.esiea.tp4A.domain.MyRover;
-import com.esiea.tp4A.domain.Obstacle;
-import com.esiea.tp4A.domain.PlanetMap;
+import com.esiea.tp4A.domain.*;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class TheGame {
@@ -23,4 +21,37 @@ public class TheGame {
         this.planetMap = new Mars(mapsize, obstacles);
         this.rovers = new HashSet<>();
     }
+
+    MyRover retrieveRoverByPlayer ( String player){
+        for (Iterator<MyRover> it = rovers.iterator(); it.hasNext(); ) {
+            MyRover rover = it.next();
+            if (rover.getPlayer().equals(player)){
+                return rover;
+            }
+        } return null;
+    }
+
+    Position getPosition(String player){
+        return retrieveRoverByPlayer(player).getPosition();
+    }
+
+    LocalMap getPlayerLocalMap(String player){
+        return null;
+    }
+
+    int getLaserRange(){
+        return laserRange;
+    }
+
+    void laserShoot(String player){
+        Position playerPosition = retrieveRoverByPlayer(player).getPosition();
+        retrieveRoverByPlayer(player).getLaser().shoot(playerPosition);
+    }
+
+    Position playerMove(String player ,String command)
+    {
+        return retrieveRoverByPlayer(player).move(command);
+    }
+
+
 }

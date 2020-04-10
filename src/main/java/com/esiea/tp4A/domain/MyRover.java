@@ -5,7 +5,9 @@ public class MyRover implements MarsRover {
     private final RoverPosition roverPosition;
     private final PlanetMap mars;
     private final Laser laser;
-    public MyRover(int x, int y, Direction direction, int laserRange, PlanetMap planet) {
+    private final String player;
+    public MyRover( int x, int y, Direction direction, int laserRange, PlanetMap planet, String player ) {
+        this.player = player;
         this.mars = planet;
         this.roverPosition = new RoverPosition(planet);
         initialize(Position.of(x, y, direction));
@@ -33,8 +35,16 @@ public class MyRover implements MarsRover {
         return this;
     }
 
+    public String getPlayer() {
+        return player;
+    }
+
     public Position getPosition() {
         return position;
+    }
+
+    public Laser getLaser() {
+        return laser;
     }
 
     public boolean dealShot(Position position){ // doit être remonter pour la 2nd séance

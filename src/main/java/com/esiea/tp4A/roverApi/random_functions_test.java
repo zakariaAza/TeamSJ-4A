@@ -21,8 +21,10 @@ public class random_functions_test {
                 System.out.println("("+obstacle.getX()+","+obstacle.getY()+")");
         }
         System.out.println(obstacles.size());*/
+        String player;
         for(int i = 0; i < 50; i++){
-                MyRover rover = randomGame.generateRandomRover(obstacles, rovers, laserRange, planetMap);
+                player = String.valueOf(i);
+                MyRover rover = randomGame.generateRandomRover(obstacles, rovers, laserRange, planetMap, player);
                 if(rover != null){
                     //System.out.println("("+rover.getPosition().getX()+","+rover.getPosition().getY()+") "+rover.getPosition().getDirection());
                     rovers.add(rover);

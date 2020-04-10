@@ -1,12 +1,13 @@
 package com.esiea.tp4A.roverApi;
 
+import com.esiea.tp4A.domain.MarsRover;
 import com.esiea.tp4A.domain.Obstacle;
 import com.esiea.tp4A.domain.Position;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class LocalMap {
+public class LocalMap{
     private Set<Position> playerPosiitons = new HashSet<>();
     private Set<Obstacle> obstacles = new HashSet<>();
 
@@ -14,7 +15,6 @@ public class LocalMap {
         this.playerPosiitons = playerPosiitons;
         this.obstacles = obstacles;
     }
-
     public Set<Position> getPlayerPosiitons() {
         return playerPosiitons;
     }
