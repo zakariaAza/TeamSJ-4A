@@ -15,6 +15,7 @@ public class random_functions_test {
         int laserRange = randomGame.getRandomLaserRange();
         Set<Obstacle> obstacles = randomGame.generateObstaclesPosition(mapsize,(0-(mapsize/2)+1), mapsize/2);
         PlanetMap planetMap = new Mars(mapsize, obstacles);
+        TheGame theGame = new TheGame(planetMap);
         Set<MyRover> rovers = new HashSet<>();
         System.out.println(mapsize);
         /*for(Obstacle obstacle : obstacles){
@@ -24,7 +25,7 @@ public class random_functions_test {
         String player;
         for(int i = 0; i < 50; i++){
                 player = String.valueOf(i);
-                MyRover rover = randomGame.generateRandomRover(obstacles, rovers, laserRange, planetMap, player);
+                MyRover rover = randomGame.generateRandomRover(theGame, obstacles, rovers, laserRange, planetMap, player);
                 if(rover != null){
                     //System.out.println("("+rover.getPosition().getX()+","+rover.getPosition().getY()+") "+rover.getPosition().getDirection());
                     rovers.add(rover);

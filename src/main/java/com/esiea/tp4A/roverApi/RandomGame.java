@@ -39,13 +39,13 @@ public class RandomGame {
         return obstacles;
     }
 
-    public MyRover generateRandomRover( Set<Obstacle> obstacles, Set<MyRover> rovers, int laserRange, PlanetMap map, String player){
+    public MyRover generateRandomRover(TheGame theGame, Set<Obstacle> obstacles, Set<MyRover> rovers, int laserRange, PlanetMap map, String player){
         if(rovers.size() == 50) return null;
-        for(int i = 0; i < 20; i++){ // Nb of attempts
+        for(int i = 0; i < 10; i++){ // Nb of attempts
             Direction randomDirection = Direction.values()[new Random().nextInt(Direction.values().length)];
             Obstacle player_position = new Obstacle(getRandomIntWithinRange(map.getLimit_neg(), map.getLimit_pos()), getRandomIntWithinRange(map.getLimit_neg(), map.getLimit_pos()));
             if(obstacles.contains(player_position)) continue;
-            MyRover rover = new MyRover(player_position.getX(), player_position.getY(), randomDirection, laserRange, map, player);
+            MyRover rover = new MyRover(theGame, player_position.getX(), player_position.getY(), randomDirection, laserRange, map, player);
             if(rovers.contains(rover)) continue;
             else return rover;
         }

@@ -1,12 +1,16 @@
 package com.esiea.tp4A.domain;
 
+import com.esiea.tp4A.roverApi.TheGame;
+
 public class MyRover implements MarsRover {
     private Position position;
     private final RoverPosition roverPosition;
     private final PlanetMap mars;
     private final Laser laser;
     private final String player;
-    public MyRover( int x, int y, Direction direction, int laserRange, PlanetMap planet, String player ) {
+    private final TheGame theGame;
+    public MyRover(TheGame theGame, int x, int y, Direction direction, int laserRange, PlanetMap planet, String player ) {
+        this.theGame = theGame;
         this.player = player;
         this.mars = planet;
         this.roverPosition = new RoverPosition(planet);
@@ -43,15 +47,11 @@ public class MyRover implements MarsRover {
         return position;
     }
 
-    public Laser getLaser() {
-        return laser;
-    }
-
-    public boolean dealShot(Position position){ // doit être remonter pour la 2nd séance
+    public boolean dealShot(Position position){
         if(this.mars.isObstacle(position)){
-            this.mars.removeObstacle(new Obstacle(position.getX(), position.getY())); return true;
-        }else if(new Obstacle(position.getX(), position.getY()).comparePosition(this.position)){ // player hit by his own laser
-            return false;
+            this.mars.removeObstacle(new Obstacle(position.getX(), position.getY())); return true; // délégation à theGame ?
+        }else if(new Obstacle(position.getX(), position.getY()).comparePosition(this.position)){
+            this.theGame.deletePlayer(this.player); return true;
         }else return false;
     }
 }
