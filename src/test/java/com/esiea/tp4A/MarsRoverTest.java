@@ -14,6 +14,7 @@ public class MarsRoverTest {
 
     @ParameterizedTest
     @CsvSource({
+        "'d', 0, 0, NORTH",
         "'', 0, 0, NORTH",
         "'f', 0, 0, NORTH",
         "'b', 0, -1, NORTH",
