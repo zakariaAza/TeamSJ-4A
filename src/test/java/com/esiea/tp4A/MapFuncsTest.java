@@ -17,7 +17,7 @@ public class MapFuncsTest {
         int mapSize = 100;
         Position position = Position.of(0, 0, Direction.NORTH);
         Set<CircularPoint> resultsPoints = mapFuncs.generateLocalMapPoints(position, mapSize, 1);
-        for (CircularPoint point : resultsPoints){
+        for (CircularPoint point : resultsPoints) {
             assertThat(point.getX()).as("LocalPoints").isEqualTo(0);
             assertThat(point.getY()).as("LocalPoints").isEqualTo(0);
         }
