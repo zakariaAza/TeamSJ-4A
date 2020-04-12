@@ -4,11 +4,11 @@ import java.util.Set;
 
 public class Laser {
     private final int range;
-    private final PlanetMap planet;
+    private final Mars planet;
     private final RoverPosition roverPosition;
     private final MyRover myRover;
 
-    public Laser(int range, PlanetMap planet, MyRover myRover) {
+    public Laser(int range, Mars planet, MyRover myRover) {
         this.range = range;
         this.planet = planet;
         this.roverPosition = new RoverPosition(planet);
