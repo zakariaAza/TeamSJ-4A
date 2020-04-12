@@ -56,7 +56,7 @@ public class TheGame implements RoverApi{
 
     public MyRover createPlayer(String player){
         MyRover myRover = new RandomGame().generateRandomRover(this, this.planetMap.obstaclePositions(), this.rovers, this.laserRange, this.planetMap, player);
-        this.rovers.add(myRover);
+        if (myRover != null) this.rovers.add(myRover);
         return myRover;
     }
 

@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ThaGameTest {
     private final RandomGame randomGame = new RandomGame();
@@ -70,6 +72,15 @@ public class ThaGameTest {
     void checkUnknownPlayer(){
         MyRover myRover = theGame.retrieveRoverByPlayer("unknown");
         assertThat(myRover).as("checkUnknownPlayer").isNull();
+    }
+
+    @Test
+    void checkOverLoadRovers(){
+        for(int i = 0; i < 50; i++){
+            theGame.createPlayer("player"+i);
+        }
+        MyRover myRover = theGame.createPlayer("player55");
+        assertThat(myRover).as("checkOverLoadRovers").isNull();
     }
 
 }
