@@ -23,7 +23,8 @@ public class MyRover implements MarsRover {
         if(command.isEmpty()) return Position.of(0,0, Direction.NORTH);
         for(char singleCommand : command.toCharArray()){
             if(singleCommand == 'f' || singleCommand == 'b' || singleCommand == 'l' || singleCommand == 'r') position = roverPosition.commandSwitch(singleCommand,position);
-            else laser.shoot(position);
+            else if(singleCommand == 'f') laser.shoot(position);
+            else continue;
         }
         return position;
     }

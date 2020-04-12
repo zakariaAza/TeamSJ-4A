@@ -1,14 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.esiea.tp4A.MarsRoverTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.023 s <<< FAILURE! - in com.esiea.tp4A.MarsRoverTest
-rover_stays_at_initial_position{String, int, int, Direction}[1]  Time elapsed: 0.022 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-
-Expecting:
- <com.esiea.tp4A.domain.Position$FixedPosition@476ee5b3>
-to be equal to:
- <com.esiea.tp4A.domain.Position$FixedPosition@59ed3e6c>
-but was not.
-	at com.esiea.tp4A.MarsRoverTest.rover_stays_at_initial_position(MarsRoverTest.java:21)
-
+Tests run: 58, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.672 s - in com.esiea.tp4A.MarsRoverTest

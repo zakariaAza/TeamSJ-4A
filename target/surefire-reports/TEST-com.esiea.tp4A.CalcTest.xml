@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.esiea.tp4A.CalcTest" time="0.265" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.esiea.tp4A.CalcTest" time="0.292" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\test-classes;C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\classes;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter\5.6.0\junit-jupiter-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Sasi Govind\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\assertj\assertj-core\3.14.0\assertj-core-3.14.0.jar;"/>
+    <property name="java.class.path" value="C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\test-classes;C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\classes;C:\Users\Sasi Govind\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter\5.6.0\junit-jupiter-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Sasi Govind\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\assertj\assertj-core\3.14.0\assertj-core-3.14.0.jar;C:\Users\Sasi Govind\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-13.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\SASIGO~1\AppData\Local\Temp\surefire1960848383442360362\surefirebooter11498709336252327121.jar C:\Users\Sasi Govind\AppData\Local\Temp\surefire1960848383442360362 2020-03-19T17-48-01_452-jvmRun1 surefire13738388963180703524tmp surefire_017297079427092275904tmp"/>
+    <property name="sun.java.command" value="C:\Users\SASIGO~1\AppData\Local\Temp\surefire16158260373704862853\surefirebooter709191892290341806.jar C:\Users\Sasi Govind\AppData\Local\Temp\surefire16158260373704862853 2020-04-12T17-29-57_115-jvmRun1 surefire5357621213367534031tmp surefire_07683194622345058012tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\test-classes;C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\classes;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter\5.6.0\junit-jupiter-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Sasi Govind\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\assertj\assertj-core\3.14.0\assertj-core-3.14.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\test-classes;C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\classes;C:\Users\Sasi Govind\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter\5.6.0\junit-jupiter-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Sasi Govind\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\assertj\assertj-core\3.14.0\assertj-core-3.14.0.jar;C:\Users\Sasi Govind\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Sasi Govind"/>
     <property name="user.language" value="fr"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\SASIGO~1\AppData\Local\Temp\surefire1960848383442360362\surefirebooter11498709336252327121.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\SASIGO~1\AppData\Local\Temp\surefire16158260373704862853\surefirebooter709191892290341806.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="13.0.2+8"/>
@@ -56,6 +56,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="add_cases{int, int, int}[1]" classname="com.esiea.tp4A.CalcTest" time="0.152"/>
+  <testcase name="add_cases{int, int, int}[1]" classname="com.esiea.tp4A.CalcTest" time="0.171"/>
   <testcase name="add_cases{int, int, int}[2]" classname="com.esiea.tp4A.CalcTest" time="0.001"/>
 </testsuite>

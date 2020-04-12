@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.esiea.tp4A.MarsRoverTest" time="0.023" tests="1" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.esiea.tp4A.MarsRoverTest" time="0.672" tests="58" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\test-classes;C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\classes;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter\5.6.0\junit-jupiter-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Sasi Govind\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\assertj\assertj-core\3.14.0\assertj-core-3.14.0.jar;"/>
+    <property name="java.class.path" value="C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\test-classes;C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\classes;C:\Users\Sasi Govind\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter\5.6.0\junit-jupiter-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Sasi Govind\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\assertj\assertj-core\3.14.0\assertj-core-3.14.0.jar;C:\Users\Sasi Govind\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-13.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\SASIGO~1\AppData\Local\Temp\surefire1960848383442360362\surefirebooter11498709336252327121.jar C:\Users\Sasi Govind\AppData\Local\Temp\surefire1960848383442360362 2020-03-19T17-48-01_452-jvmRun1 surefire13738388963180703524tmp surefire_017297079427092275904tmp"/>
+    <property name="sun.java.command" value="C:\Users\SASIGO~1\AppData\Local\Temp\surefire16158260373704862853\surefirebooter709191892290341806.jar C:\Users\Sasi Govind\AppData\Local\Temp\surefire16158260373704862853 2020-04-12T17-29-57_115-jvmRun1 surefire5357621213367534031tmp surefire_07683194622345058012tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\test-classes;C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\classes;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter\5.6.0\junit-jupiter-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Sasi Govind\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\assertj\assertj-core\3.14.0\assertj-core-3.14.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\test-classes;C:\Users\Sasi Govind\Documents\my_java_projects\TeamSJ-4A\target\classes;C:\Users\Sasi Govind\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter\5.6.0\junit-jupiter-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Sasi Govind\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\Sasi Govind\.m2\repository\org\assertj\assertj-core\3.14.0\assertj-core-3.14.0.jar;C:\Users\Sasi Govind\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Sasi Govind"/>
     <property name="user.language" value="fr"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\SASIGO~1\AppData\Local\Temp\surefire1960848383442360362\surefirebooter11498709336252327121.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\SASIGO~1\AppData\Local\Temp\surefire16158260373704862853\surefirebooter709191892290341806.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="13.0.2+8"/>
@@ -56,15 +56,62 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[1]" classname="com.esiea.tp4A.MarsRoverTest" time="0.022">
-    <failure message="&#10;Expecting:&#10; &lt;com.esiea.tp4A.domain.Position$FixedPosition@476ee5b3&gt;&#10;to be equal to:&#10; &lt;com.esiea.tp4A.domain.Position$FixedPosition@59ed3e6c&gt;&#10;but was not." type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
-
-Expecting:
- <com.esiea.tp4A.domain.Position$FixedPosition@476ee5b3>
-to be equal to:
- <com.esiea.tp4A.domain.Position$FixedPosition@59ed3e6c>
-but was not.
-	at com.esiea.tp4A.MarsRoverTest.rover_stays_at_initial_position(MarsRoverTest.java:21)
-]]></failure>
-  </testcase>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[1]" classname="com.esiea.tp4A.MarsRoverTest" time="0.039"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[2]" classname="com.esiea.tp4A.MarsRoverTest" time="0.05"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[3]" classname="com.esiea.tp4A.MarsRoverTest" time="0.002"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[4]" classname="com.esiea.tp4A.MarsRoverTest" time="0.032"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[5]" classname="com.esiea.tp4A.MarsRoverTest" time="0.003"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[6]" classname="com.esiea.tp4A.MarsRoverTest" time="0.002"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[7]" classname="com.esiea.tp4A.MarsRoverTest" time="0.008"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[8]" classname="com.esiea.tp4A.MarsRoverTest" time="0.006"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[9]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[10]" classname="com.esiea.tp4A.MarsRoverTest" time="0.005"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[11]" classname="com.esiea.tp4A.MarsRoverTest" time="0.002"/>
+  <testcase name="rover_laser_shoot{int, int, Direction, String, int, int, Direction}[12]" classname="com.esiea.tp4A.MarsRoverTest" time="0.005"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[1]" classname="com.esiea.tp4A.MarsRoverTest" time="0.008"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[2]" classname="com.esiea.tp4A.MarsRoverTest" time="0.02"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[3]" classname="com.esiea.tp4A.MarsRoverTest" time="0.002"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[4]" classname="com.esiea.tp4A.MarsRoverTest" time="0.007"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[5]" classname="com.esiea.tp4A.MarsRoverTest" time="0.017"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[6]" classname="com.esiea.tp4A.MarsRoverTest" time="0.005"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[7]" classname="com.esiea.tp4A.MarsRoverTest" time="0.005"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[8]" classname="com.esiea.tp4A.MarsRoverTest" time="0.017"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[9]" classname="com.esiea.tp4A.MarsRoverTest" time="0.004"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[10]" classname="com.esiea.tp4A.MarsRoverTest" time="0.015"/>
+  <testcase name="rover_limit_positions{int, int, Direction, String, int, int, Direction}[11]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[1]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[2]" classname="com.esiea.tp4A.MarsRoverTest" time="0.019"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[3]" classname="com.esiea.tp4A.MarsRoverTest" time="0.015"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[4]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[5]" classname="com.esiea.tp4A.MarsRoverTest" time="0.074"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[6]" classname="com.esiea.tp4A.MarsRoverTest" time="0.003"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[7]" classname="com.esiea.tp4A.MarsRoverTest" time="0.018"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[8]" classname="com.esiea.tp4A.MarsRoverTest" time="0.013"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[9]" classname="com.esiea.tp4A.MarsRoverTest" time="0"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[10]" classname="com.esiea.tp4A.MarsRoverTest" time="0.017"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[11]" classname="com.esiea.tp4A.MarsRoverTest" time="0.004"/>
+  <testcase name="rover_dead_shoot{int, int, Direction, String, int, int, Direction}[12]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[1]" classname="com.esiea.tp4A.MarsRoverTest" time="0.014"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[2]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[3]" classname="com.esiea.tp4A.MarsRoverTest" time="0.014"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[4]" classname="com.esiea.tp4A.MarsRoverTest" time="0.008"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[5]" classname="com.esiea.tp4A.MarsRoverTest" time="0"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[6]" classname="com.esiea.tp4A.MarsRoverTest" time="0.031"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[7]" classname="com.esiea.tp4A.MarsRoverTest" time="0.016"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[8]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[9]" classname="com.esiea.tp4A.MarsRoverTest" time="0"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[10]" classname="com.esiea.tp4A.MarsRoverTest" time="0.004"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[11]" classname="com.esiea.tp4A.MarsRoverTest" time="0.017"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[12]" classname="com.esiea.tp4A.MarsRoverTest" time="0.015"/>
+  <testcase name="rover_stays_at_initial_position{String, int, int, Direction}[13]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_detect_obstacles{int, int, Direction, String, int, int, Direction}[1]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_detect_obstacles{int, int, Direction, String, int, int, Direction}[2]" classname="com.esiea.tp4A.MarsRoverTest" time="0.014"/>
+  <testcase name="rover_detect_obstacles{int, int, Direction, String, int, int, Direction}[3]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_detect_obstacles{int, int, Direction, String, int, int, Direction}[4]" classname="com.esiea.tp4A.MarsRoverTest" time="0.013"/>
+  <testcase name="rover_detect_obstacles{int, int, Direction, String, int, int, Direction}[5]" classname="com.esiea.tp4A.MarsRoverTest" time="0.014"/>
+  <testcase name="rover_detect_obstacles{int, int, Direction, String, int, int, Direction}[6]" classname="com.esiea.tp4A.MarsRoverTest" time="0.004"/>
+  <testcase name="rover_detect_obstacles{int, int, Direction, String, int, int, Direction}[7]" classname="com.esiea.tp4A.MarsRoverTest" time="0.002"/>
+  <testcase name="rover_detect_obstacles{int, int, Direction, String, int, int, Direction}[8]" classname="com.esiea.tp4A.MarsRoverTest" time="0.004"/>
+  <testcase name="rover_detect_obstacles{int, int, Direction, String, int, int, Direction}[9]" classname="com.esiea.tp4A.MarsRoverTest" time="0.001"/>
+  <testcase name="rover_detect_obstacles{int, int, Direction, String, int, int, Direction}[10]" classname="com.esiea.tp4A.MarsRoverTest" time="0.015"/>
 </testsuite>
