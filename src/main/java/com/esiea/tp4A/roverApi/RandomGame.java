@@ -39,7 +39,7 @@ public class RandomGame {
         return obstacles;
     }
 
-    public MyRover generateRandomRover(TheGame theGame, Set<Obstacle> obstacles, Set<MyRover> rovers, int laserRange, PlanetMap map, String player){
+    public MyRover generateRandomRover(TheGame theGame, Set<Obstacle> obstacles, Set<MyRover> rovers, int laserRange, Mars map, String player){
         if(rovers.size() == 50) return null;
         for(int i = 0; i < 10; i++){ // Nb of attempts
             Direction randomDirection = Direction.values()[new Random().nextInt(Direction.values().length)];

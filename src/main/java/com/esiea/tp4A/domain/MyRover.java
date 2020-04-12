@@ -5,11 +5,11 @@ import com.esiea.tp4A.roverApi.TheGame;
 public class MyRover implements MarsRover {
     private Position position;
     private final RoverPosition roverPosition;
-    private final PlanetMap mars;
+    private final Mars mars;
     private final Laser laser;
     private final String player;
     private final TheGame theGame;
-    public MyRover(TheGame theGame, int x, int y, Direction direction, int laserRange, PlanetMap planet, String player ) {
+    public MyRover(TheGame theGame, int x, int y, Direction direction, int laserRange, Mars planet, String player ) {
         this.theGame = theGame;
         this.player = player;
         this.mars = planet;

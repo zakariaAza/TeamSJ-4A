@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class TheGame implements RoverApi{
-    private final PlanetMap planetMap;
+    private final Mars planetMap;
     private Set<MyRover> rovers;
     private final int laserRange;
 

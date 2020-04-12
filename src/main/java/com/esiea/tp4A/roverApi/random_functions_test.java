@@ -14,7 +14,7 @@ public class random_functions_test {
         int mapsize = randomGame.getRandomMapSize();
         int laserRange = randomGame.getRandomLaserRange();
         Set<Obstacle> obstacles = randomGame.generateObstaclesPosition(mapsize,(0-(mapsize/2)+1), mapsize/2);
-        PlanetMap planetMap = new Mars(mapsize, obstacles);
+        Mars planetMap = new Mars(mapsize, obstacles);
         TheGame theGame = new TheGame(planetMap);
         Set<MyRover> rovers = new HashSet<>();
         System.out.println(mapsize);

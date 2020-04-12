@@ -1,8 +1,8 @@
 package com.esiea.tp4A.domain;
 
 public class RoverPosition{
-    private final PlanetMap planet;
-    public RoverPosition(PlanetMap planet) {
+    private final Mars planet;
+    public RoverPosition(Mars planet) {
         this.planet = planet;
     }
 

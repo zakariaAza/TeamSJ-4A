@@ -17,5 +17,9 @@ public class HttpServer {
             System.err.println("The port" + port + "is already in used");
         }
 
+
+        while (true){
+
+        }
     }
 }
