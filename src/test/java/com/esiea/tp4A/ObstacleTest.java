@@ -7,14 +7,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ObstacleTest {
 
     @Test
-    void test_obstacle_get(){
+    void test_obstacle_get() {
         Obstacle obstacle = new Obstacle(1, 2);
         Assertions.assertThat(obstacle.getX()).as("ObstaclePointX").isEqualTo(1);
         Assertions.assertThat(obstacle.getY()).as("ObstaclePointY").isEqualTo(2);
