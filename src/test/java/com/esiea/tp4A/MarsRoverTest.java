@@ -38,21 +38,21 @@ public class MarsRoverTest {
 
     @ParameterizedTest
     @CsvSource({
-        "0, 50, NORTH, 'f', 0, -49, NORTH",
-        "50, 0, NORTH, 'rf', -49, 0, EAST",
-        "0, 50, SOUTH, 'b', 0, -49, SOUTH",
-        "50, 0, SOUTH, 'lf', -49,0, EAST",
-        "0, 50, WEST, 'lf', 0, 49, SOUTH",
-        "50, 0, WEST, rrf, -49, 0, EAST",
-        "0, 50, EAST, rb, 0, -49, SOUTH",
-        "50, 0, EAST, 'f', -49, 0, EAST",
-        "30, 20, EAST, 'lf', 30, 21, NORTH",
-        "-40, 10, WEST, 'lb', -40, 11, SOUTH",
+        "0, 25, NORTH, 'f', 0, -24, NORTH", // 0 25 0 -24
+        "25, 0, NORTH, 'rf', -24, 0, EAST", // 25 0 -24 0
+        "0, 25, SOUTH, 'b', 0, -24, SOUTH", // 0 25 0 -24
+        "25, 0, SOUTH, 'lf', -24,0, EAST",
+        "0, 25, WEST, 'lf', 0, 24, SOUTH",
+        "25, 0, WEST, rrf, -24, 0, EAST",
+        "0, 25, EAST, rb, 0, -24, SOUTH",
+        "25, 0, EAST, 'f', -24, 0, EAST",
+        "15, 10, EAST, 'lf', 15, 11, NORTH", // 15 10 12 11
+        "-20, 5, WEST, 'lb', -20, 6, SOUTH",
         "25, 0, SOUTH, 'fflb', 24, -2, EAST"
     })
 
     void rover_limit_positions(int givenX, int givenY, Direction givenDirection, String command, int expectedX, int expectedY, Direction expectedDirection){
-        Mars mars = new Mars(100, Stream.of(new Obstacle(0,1)).collect(Collectors.toSet()));
+        Mars mars = new Mars(50, Stream.of(new Obstacle(0,1)).collect(Collectors.toSet()));
         MarsRover marsRover = new MyRover(new TheGame(mars),givenX,givenY, givenDirection, 5, mars, "");
         Position newPosition = marsRover.move(command);
         Assertions.assertThat(newPosition).as("rover_limit_positions").extracting(Position::getX,Position::getY,Position::getDirection)
@@ -105,4 +105,33 @@ public class MarsRoverTest {
         Assertions.assertThat(newPosition).as("rover_laser_shoot").extracting(Position::getX,Position::getY,Position::getDirection)
             .isEqualTo(List.of(expectedX, expectedY, expectedDirection));
     }
+
+    @ParameterizedTest
+    @CsvSource({
+        "0, 0, NORTH, 'sff', 0, 2, NORTH",
+        "0, 50, NORTH, 'srrbb', 0, -48, SOUTH",
+        "0, 50, NORTH, 'sf', 0, -49, NORTH",
+        "50, 0, NORTH, 'srf', -49, 0, EAST",
+        "0, 50, SOUTH, 'sb', 0, -49, SOUTH",
+        "50, 0, SOUTH, 'slf', -49,0,EAST",
+        "0, 50, WEST, 'slf', 0, 49, SOUTH",
+        "50, 0, WEST, 'srrf', -49, 0, EAST",
+        "-40, 10, WEST, 'slb', -40, 11, SOUTH",
+        "0, 50, EAST, 'srb', 0, -49, SOUTH",
+        "50, 0, EAST, 'sf', -49, 0, EAST",
+        "25, 0, SOUTH, 'sfflb', 24, -2, EAST"
+    })
+
+    void rover_dead_shoot(int givenX, int givenY, Direction givenDirection, String command, int expectedX, int expectedY, Direction expectedDirection){
+        Mars mars = new Mars(100, Stream.of(new Obstacle(0,5), new Obstacle(0,6)).collect(Collectors.toSet()));
+        MarsRover marsRover = new MyRover(new TheGame(mars), givenX, givenY, givenDirection, 5, mars, "");
+        Position newPosition = marsRover.move(command);
+        Assertions.assertThat(newPosition).as("rover_laser_shoot").extracting(Position::getX,Position::getY,Position::getDirection)
+            .isEqualTo(List.of(expectedX, expectedY, expectedDirection));
+    }
+
+
+
+
+
 }
