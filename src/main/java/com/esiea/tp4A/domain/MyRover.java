@@ -3,17 +3,12 @@ package com.esiea.tp4A.domain;
 import com.esiea.tp4A.roverApi.TheGame;
 
 public class MyRover implements MarsRover {
-    private Position position;
-    private final RoverPosition roverPosition;
-    private final Mars mars;
-    private final Laser laser;
-    private final String player;
-    private final TheGame theGame;
+    private Position position; private final RoverPosition roverPosition;
+    private final Mars mars; private final TheGame theGame;
+    private final Laser laser; private final String player;
     public MyRover(TheGame theGame, int x, int y, Direction direction, int laserRange, Mars planet, String player ) {
-        this.theGame = theGame;
-        this.player = player;
-        this.mars = planet;
-        this.roverPosition = new RoverPosition(planet);
+        this.theGame = theGame; this.player = player;
+        this.mars = planet; this.roverPosition = new RoverPosition(planet);
         initialize(Position.of(x, y, direction));
         laser = new Laser(laserRange, planet, this);
     }
@@ -37,6 +32,11 @@ public class MyRover implements MarsRover {
     @Override
     public MarsRover initialize(Position position) {
         this.position = position;
+        return this;
+    }
+
+    @Override
+    public MarsRover configureLaserRange(int range) {
         return this;
     }
 

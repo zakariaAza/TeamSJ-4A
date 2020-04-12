@@ -3,6 +3,7 @@ package com.esiea.tp4A;
 import com.esiea.tp4A.domain.*;
 import com.esiea.tp4A.roverApi.TheGame;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -105,6 +106,41 @@ public class MarsRoverTest {
         Position newPosition = marsRover.move(command);
         Assertions.assertThat(newPosition).as("rover_laser_shoot").extracting(Position::getX,Position::getY,Position::getDirection)
             .isEqualTo(List.of(expectedX, expectedY, expectedDirection));
+    }
+
+    @Test
+    void RoverInitialization(){
+        Mars mars = new Mars(100, Stream.of(new Obstacle(0,5), new Obstacle(0,6)).collect(Collectors.toSet()));
+        MarsRover marsRover = new MyRover(new TheGame(mars), 0, 0, Direction.NORTH, 5, mars, "");
+        Position position = marsRover.initialize(Position.of(0,0,Direction.NORTH)).move("f");
+        Assertions.assertThat(position.getX()).as("RoverInitialization").isEqualTo(0);
+    }
+
+    @Test
+    void RoverUpdateMap(){
+        Mars mars = new Mars(100, Stream.of(new Obstacle(0,5), new Obstacle(0,6)).collect(Collectors.toSet()));
+        MarsRover marsRover = new MyRover(new TheGame(mars), 0, 0, Direction.NORTH, 5, mars, "");
+        Position position = marsRover.updateMap(mars).move("f");
+        Assertions.assertThat(position.getX()).as("RoverUpdateMap").isEqualTo(0);
+    }
+
+    @Test
+    void RoverLaserConfiguration(){
+        Mars mars = new Mars(100, Stream.of(new Obstacle(0,5), new Obstacle(0,6)).collect(Collectors.toSet()));
+        MarsRover marsRover = new MyRover(new TheGame(mars), 0, 0, Direction.NORTH, 5, mars, "");
+        Position position = marsRover.configureLaserRange(5).move("f");
+        Assertions.assertThat(position.getX()).as("RoverUpdateMap").isEqualTo(0);
+    }
+
+    @Test
+    void RoverInterfaceMove(){
+        MarsRover marsRover = new MarsRover() {
+            @Override
+            public Position move(String command) {
+                return Position.of(0,0,Direction.NORTH);
+            }
+        };
+        Assertions.assertThat(marsRover.move("f").getX()).as("RoverInterfaceMove").isEqualTo(0);
     }
 
 }
