@@ -1,8 +1,8 @@
-com\esiea\tp4A\MarsTest.class
-com\esiea\tp4A\CalcTest.class
-com\esiea\tp4A\LaserTest.class
+com\esiea\tp4A\CircularPointTest.class
 com\esiea\tp4A\RoverPositionTest.class
-com\esiea\tp4A\MyRoverTest.class
 com\esiea\tp4A\MapFuncsTest.class
+com\esiea\tp4A\MarsRoverTest$1.class
+com\esiea\tp4A\LocalMapTest.class
+com\esiea\tp4A\ThaGameTest.class
 com\esiea\tp4A\ObstacleTest.class
 com\esiea\tp4A\MarsRoverTest.class

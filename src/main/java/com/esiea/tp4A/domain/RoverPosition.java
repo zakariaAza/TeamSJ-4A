@@ -17,15 +17,13 @@ public class RoverPosition{
     }
 
     public Position forward(Position position, boolean passCheck) {
-        Position calc_position;
+        Position calc_position = position;
         switch (position.getDirection()){
             case NORTH: calc_position = Position.of(generateMapPosition(position.getX()), generateMapPosition(position.getY()+1), position.getDirection()); break;
             case EAST: calc_position = Position.of(generateMapPosition(position.getX()+1), generateMapPosition(position.getY()), position.getDirection()); break;
             case WEST: calc_position = Position.of(generateMapPosition(position.getX()-1), generateMapPosition(position.getY()), position.getDirection()); break;
             case SOUTH: calc_position = Position.of(generateMapPosition(position.getX()), generateMapPosition(position.getY()-1), position.getDirection()); break;
-            default: calc_position = null;
         }
-        if(calc_position == null)throw new IllegalStateException("No Move From Direction : " + position.getDirection());
         if(passCheck) return calc_position;
         else return checkObstacle(position, calc_position);
     }
@@ -34,9 +32,8 @@ public class RoverPosition{
             case NORTH: return checkObstacle(position, Position.of(generateMapPosition(position.getX()), generateMapPosition(position.getY()-1), position.getDirection()));
             case EAST: return checkObstacle(position, Position.of(generateMapPosition(position.getX()-1), generateMapPosition(position.getY()), position.getDirection()));
             case WEST: return checkObstacle(position, Position.of(generateMapPosition(position.getX()+1), generateMapPosition(position.getY()), position.getDirection()));
-            case SOUTH: return checkObstacle(position, Position.of(generateMapPosition(position.getX()), generateMapPosition(position.getY()+1), position.getDirection()));
+            default: return checkObstacle(position, Position.of(generateMapPosition(position.getX()), generateMapPosition(position.getY()+1), position.getDirection()));
         }
-        throw new IllegalStateException("No Move From Direction : " + position.getDirection());
     }
 
     public Position left(Position position) { return checkObstacle(position, Position.of(position.getX(), position.getY(), position.getDirection().left())); }

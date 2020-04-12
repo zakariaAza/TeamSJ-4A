@@ -54,7 +54,7 @@ public class ThaGameTest {
     void checkLocalMap(){
         MyRover myRover = theGame.createPlayer("Player4");
         LocalMap localMap = theGame.getPlayerLocalMap("Player4", 1);
-        assertThat(localMap.getObstacles()).as("getObstacles").isEmpty();
+        assertThat(localMap.getObstacles().size()).as("getObstacles").isEqualTo(0);
         for (MyRover rover : localMap.getPlayers()){
             assertThat(rover.getPosition().getX()).as("getPlayers").isEqualTo(myRover.getPosition().getX());
         }
