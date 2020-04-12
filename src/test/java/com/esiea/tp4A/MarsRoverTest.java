@@ -106,32 +106,4 @@ public class MarsRoverTest {
             .isEqualTo(List.of(expectedX, expectedY, expectedDirection));
     }
 
-    @ParameterizedTest
-    @CsvSource({
-        "0, 0, NORTH, 'sff', 0, 2, NORTH",
-        "0, 50, NORTH, 'srrbb', 0, -48, SOUTH",
-        "0, 50, NORTH, 'sf', 0, -49, NORTH",
-        "50, 0, NORTH, 'srf', -49, 0, EAST",
-        "0, 50, SOUTH, 'sb', 0, -49, SOUTH",
-        "50, 0, SOUTH, 'slf', -49,0,EAST",
-        "0, 50, WEST, 'slf', 0, 49, SOUTH",
-        "50, 0, WEST, 'srrf', -49, 0, EAST",
-        "-40, 10, WEST, 'slb', -40, 11, SOUTH",
-        "0, 50, EAST, 'srb', 0, -49, SOUTH",
-        "50, 0, EAST, 'sf', -49, 0, EAST",
-        "25, 0, SOUTH, 'sfflb', 24, -2, EAST"
-    })
-
-    void rover_dead_shoot(int givenX, int givenY, Direction givenDirection, String command, int expectedX, int expectedY, Direction expectedDirection){
-        Mars mars = new Mars(100, Stream.of(new Obstacle(0,5), new Obstacle(0,6)).collect(Collectors.toSet()));
-        MarsRover marsRover = new MyRover(new TheGame(mars), givenX, givenY, givenDirection, 5, mars, "");
-        Position newPosition = marsRover.move(command);
-        Assertions.assertThat(newPosition).as("rover_laser_shoot").extracting(Position::getX,Position::getY,Position::getDirection)
-            .isEqualTo(List.of(expectedX, expectedY, expectedDirection));
-    }
-
-
-
-
-
 }
