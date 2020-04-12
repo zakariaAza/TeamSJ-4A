@@ -20,7 +20,7 @@ public class TheGame implements RoverApi{
         this.rovers = new HashSet<>();
     }
 
-    MyRover retrieveRoverByPlayer ( String player){
+    public MyRover retrieveRoverByPlayer ( String player){
         for (Iterator<MyRover> it = rovers.iterator(); it.hasNext(); ) {
             MyRover rover = it.next();
             if (rover.getPlayer().equals(player)) return rover;

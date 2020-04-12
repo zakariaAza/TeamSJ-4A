@@ -66,4 +66,10 @@ public class ThaGameTest {
         assertThat(alive).as("checkIsPlayerAlive").isIn(true, false);
     }
 
+    @Test
+    void checkUnknownPlayer(){
+        MyRover myRover = theGame.retrieveRoverByPlayer("unknown");
+        assertThat(myRover).as("checkUnknownPlayer").isNull();
+    }
+
 }
