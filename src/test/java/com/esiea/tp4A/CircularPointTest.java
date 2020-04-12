@@ -36,5 +36,9 @@ final private  CircularPoint cP = new CircularPoint(1, 2, 10);
         Assertions.assertThat(cP.comparePosition(p)).as("comparePosition").isEqualTo(true);
         Position p2 = Position.of(2, 2, Direction.WEST);
         Assertions.assertThat(cP.comparePosition(p2)).as("comparePosition").isEqualTo(false);
+        Position p3 = Position.of(1, 1, Direction.WEST);
+        Assertions.assertThat(cP.comparePosition(p3)).as("comparePosition").isEqualTo(false);
+        Position p4 = Position.of(2, 3, Direction.WEST);
+        Assertions.assertThat(cP.comparePosition(p4)).as("comparePosition").isEqualTo(false);
     }
 }
