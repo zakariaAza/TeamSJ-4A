@@ -31,8 +31,8 @@ public class TheGame implements RoverApi{
         return retrieveRoverByPlayer(player).getPosition();
     }
 
-    public LocalMap getPlayerLocalMap(String player){
-        Set<CircularPoint> circularPoints = new MapFuncs().generateLocalMapPoints(retrieveRoverByPlayer(player).getPosition(),planetMap.getSize(), 30);
+    public LocalMap getPlayerLocalMap(String player, int localMapSize){
+        Set<CircularPoint> circularPoints = new MapFuncs().generateLocalMapPoints(retrieveRoverByPlayer(player).getPosition(),planetMap.getSize(), localMapSize);
         Set<MyRover> localRovers = new MapFuncs().comparePointsToRovers(this.rovers, circularPoints);
         Set<Obstacle> localObstacles = new MapFuncs().comparePointsToObstacles(this.planetMap.obstaclePositions(), circularPoints);
         return new LocalMap(localRovers, localObstacles);

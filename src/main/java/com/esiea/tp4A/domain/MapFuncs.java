@@ -6,7 +6,8 @@ import java.util.Set;
 public class MapFuncs {
 
     public Set<CircularPoint> generateLocalMapPoints(Position rover, int mapSize, int localMapSize){
-        CircularPoint start = new CircularPoint(rover.getX()-localMapSize/2,rover.getY()-localMapSize/2, mapSize);
+        int halfMapSize = localMapSize/2;
+        CircularPoint start = new CircularPoint(rover.getX()-halfMapSize,rover.getY()-halfMapSize, mapSize);
         int x = start.getX(); int y = start.getY();
         Set<CircularPoint> points = new HashSet<>();
         for (int i = 0; i < localMapSize; i++){
