@@ -15,12 +15,13 @@ public class Laser {
         this.myRover = myRover;
     }
 
-    public void shoot(Position roverPosition){
+    public Position shoot(Position roverPosition){
         Position laser_position = roverPosition;
         Set<Obstacle> obstacles = this.planet.obstaclePositions();
         for (int i = 0; i < range; i++) {
             laser_position = this.roverPosition.forward(laser_position, true);
-            if(myRover.dealShot(laser_position)) return;
+            if(myRover.dealShot(laser_position)) return laser_position;
         }
+        return laser_position;
     }
 }
