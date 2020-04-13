@@ -20,6 +20,8 @@ public class Input {
                 String method = request.getMethod();
                 switch (method) {
                     case "GET":
+                        handler.handleGet();
+                        stop=true;
                         System.out.println("GET");
                         break;
                     case "POST":
@@ -29,7 +31,7 @@ public class Input {
                         System.out.println("PATCH");
                         break;
                 }
-                stop = !getConnectionMode(request.requestHeader());
+                //stop = !getConnectionMode(request.getRequestHeader());
                 if (stop) {
                     handler.endConnection();
                     System.out.println("End Connection");

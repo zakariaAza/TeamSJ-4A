@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class ReadBufferedInputStream extends BufferedInputStream {
-    public ReadBufferedInputStream(InputStream in) {
+    private String requestHeader;
+    public ReadBufferedInputStream(InputStream in) throws IOException {
         super(in);
+        this.requestHeader();
     }
     public String readLine() throws IOException {
         StringBuilder sb = new StringBuilder(); int b;
@@ -23,23 +25,21 @@ public class ReadBufferedInputStream extends BufferedInputStream {
         while(!line.equals("")) {
             line = readLine();
             if(line != null) requestHeader += line + "\n";
-        }return requestHeader;
+        }
+        this.requestHeader = requestHeader;
+        return this.requestHeader;
+    }
+
+    public String getRequestHeader() {
+        return requestHeader;
     }
 
     public String getMethod(){
-        try {
-            return requestHeader().split("\n")[0].split(" ")[0];
-        }catch (IOException e){
-            System.out.println("Error getMethod");
-        }return "";
+        return this.requestHeader.split("\n")[0].split(" ")[0];
     }
 
     public String getPath(){
-        try {
-            return requestHeader().split("\n")[0].split(" ")[1];
-        }catch (IOException e){
-            System.out.println("Error getPath");
-        }return "";
+        return this.requestHeader.split("\n")[0].split(" ")[1];
     }
 
 
