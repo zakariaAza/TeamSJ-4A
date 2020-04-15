@@ -1,11 +1,15 @@
 package com.esiea.tp4A.game;
 
 import com.esiea.tp4A.domain.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class MyRover implements MarsRover {
+import java.io.Serializable;
+
+public class MyRover implements MarsRover , Serializable {
     private Position position; private final RoverPosition roverPosition;
     private final Mars mars; private final TheGame theGame;
     private final Laser laser; private final String player;
+    private boolean alive = true;
     public MyRover(TheGame theGame, int x, int y, Direction direction, int laserRange, Mars planet, String player ) {
         this.theGame = theGame; this.player = player;
         this.mars = planet; this.roverPosition = new RoverPosition(planet);
@@ -40,6 +44,7 @@ public class MyRover implements MarsRover {
         return this;
     }
 
+    @JsonProperty("name")
     public String getPlayer() {
         return player;
     }
@@ -47,6 +52,13 @@ public class MyRover implements MarsRover {
     public Position getPosition() {
         return position;
     }
+
+    @JsonProperty("alive")
+    public boolean isAlive() { return alive; }
+    public void setAlive(boolean alive) { this.alive = alive; }
+
+    @JsonProperty("laser-range")
+    public int getLaser() { return laser.getRange(); }
 
     public boolean dealShot(Position position){
         if(this.mars.isObstacle(position)){

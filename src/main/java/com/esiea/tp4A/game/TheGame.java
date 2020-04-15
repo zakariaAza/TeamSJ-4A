@@ -2,29 +2,29 @@ package com.esiea.tp4A.game;
 
 import com.esiea.tp4A.domain.*;
 
+import java.io.Serializable;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class TheGame implements RoverApi{
+public class TheGame implements RoverApi, Serializable {
     private final Mars planetMap;
-    private Set<MyRover> rovers;
+    private HashMap<String, MyRover> rovers;
+    private HashMap<String, MyRover> rovers_bin;
     private final int laserRange;
 
-    public TheGame(PlanetMap planetMap) {
-        RandomGame randomGame = new RandomGame();
-        int mapsize = randomGame.getRandomMapSize();
-        this.laserRange = randomGame.getRandomLaserRange();
-        Set<Obstacle> obstacles = randomGame.generateObstaclesPosition(mapsize,(0-(mapsize/2)+1), mapsize/2);
-        this.planetMap = new Mars(mapsize, obstacles);
-        this.rovers = new HashSet<>();
+    public TheGame(Mars planetMap) {
+        this.planetMap = planetMap;
+        this.rovers = new HashMap<>();
+        this.rovers_bin = new HashMap<>();
+        this.laserRange = new RandomGame().getRandomLaserRange();
     }
 
-    public MyRover retrieveRoverByPlayer ( String player){
-        for (Iterator<MyRover> it = rovers.iterator(); it.hasNext(); ) {
-            MyRover rover = it.next();
-            if (rover.getPlayer().equals(player)) return rover;
-        } return null;
+    public MyRover retrieveRoverByPlayer (String player){
+        if(rovers.get(player) != null) return rovers.get(player);
+        else if(rovers_bin.get(player) != null) return rovers_bin.get(player);
+        else return null;
     }
 
     public Position getPosition(String player){
@@ -41,26 +41,27 @@ public class TheGame implements RoverApi{
     public int getLaserRange(){
         return this.laserRange;
     }
-
     public boolean isPlayerAlive(String player) {
-        return retrieveRoverByPlayer(player)!=null;
+        return retrieveRoverByPlayer(player).isAlive();
     }
-
     public void laserShoot(String player){
         retrieveRoverByPlayer(player).move("s");
     }
-
-    public Position playerMove(String player ,String command) {
-        return retrieveRoverByPlayer(player).move(command);
+    public MyRover playerMove(String player ,String command) {
+        retrieveRoverByPlayer(player).move(command);
+        return retrieveRoverByPlayer(player);
     }
 
     public MyRover createPlayer(String player){
         MyRover myRover = new RandomGame().generateRandomRover(this, this.planetMap.obstaclePositions(), this.rovers, this.laserRange, this.planetMap, player);
-        if (myRover != null) this.rovers.add(myRover);
+        if (myRover != null) this.rovers.put(player, myRover);
         return myRover;
     }
 
     public void deletePlayer(String player){
-        this.rovers.remove(retrieveRoverByPlayer(player));
+        MyRover rover = retrieveRoverByPlayer(player);
+        rover.setAlive(false);
+        this.rovers_bin.put(player, rover);
+        this.rovers.remove(rover);
     }
 }

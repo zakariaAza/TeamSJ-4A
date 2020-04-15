@@ -4,22 +4,32 @@ import com.esiea.tp4A.domain.PlanetMap;
 import com.esiea.tp4A.domain.Position;
 import com.esiea.tp4A.game.Obstacle;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Mars implements PlanetMap {
+public class Mars implements PlanetMap, Serializable {
 
     private final int size;
     private final int limit_pos;
     private final int limit_neg;
     private Set<Obstacle> obstacles = new HashSet<>();
 
+    public Mars() {
+        this.size = new RandomGame().getRandomMapSize();
+        this.limit_pos = this.size/2;
+        this.limit_neg = 0 - this.limit_pos + 1;
+        this.obstacles = new RandomGame().generateObstaclesPosition(this.size, this.limit_neg, this.limit_pos);
+    }
+
     public Mars(int size, Set<Obstacle> obstacles) {
         this.size = size;
-        this.limit_pos = size/2;
+        this.limit_pos = this.size/2;
         this.limit_neg = 0 - this.limit_pos + 1;
         this.obstacles = obstacles;
     }
+
+
 
     @Override
     public Set<Obstacle> obstaclePositions() {

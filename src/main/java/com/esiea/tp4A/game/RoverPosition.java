@@ -2,7 +2,9 @@ package com.esiea.tp4A.game;
 
 import com.esiea.tp4A.domain.Position;
 
-public class RoverPosition{
+import java.io.Serializable;
+
+public class RoverPosition implements Serializable {
     private final Mars planet;
     public RoverPosition(Mars planet) {
         this.planet = planet;

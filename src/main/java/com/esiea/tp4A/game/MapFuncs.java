@@ -2,10 +2,12 @@ package com.esiea.tp4A.game;
 
 import com.esiea.tp4A.domain.Position;
 
+import java.io.Serializable;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MapFuncs {
+public class MapFuncs implements Serializable {
 
     public Set<CircularPoint> generateLocalMapPoints(Position rover, int mapSize, int localMapSize){
         int halfMapSize = localMapSize/2;
@@ -29,12 +31,12 @@ public class MapFuncs {
         return localObstacles;
     }
 
-    public Set<MyRover> comparePointsToRovers(Set<MyRover> rovers, Set<CircularPoint> circularPoints){
+    public Set<MyRover> comparePointsToRovers(HashMap<String, MyRover> rovers, Set<CircularPoint> circularPoints){
         Set<MyRover> localRovers = new HashSet<>();
         for (CircularPoint point : circularPoints){
-            for (MyRover rover: rovers) {
+            rovers.forEach((playerName, rover) -> {
                 if(point.comparePosition(rover.getPosition())) localRovers.add(rover);
-            }
+            });/*for (MyRover rover: rovers) { if(point.comparePosition(rover.getPosition())) localRovers.add(rover); }*/
         }
         return localRovers;
     }
