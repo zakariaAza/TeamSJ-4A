@@ -1,11 +1,8 @@
 package com.esiea.tp4A;
 
-import com.esiea.tp4A.domain.*;
-import com.esiea.tp4A.roverApi.TheGame;
+import com.esiea.tp4A.game.Obstacle;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
 
 public class ObstacleTest {

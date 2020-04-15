@@ -1,10 +1,10 @@
 package com.esiea.tp4A;
 import com.esiea.tp4A.domain.*;
-import com.esiea.tp4A.roverApi.LocalMap;
-import com.esiea.tp4A.roverApi.TheGame;
+import com.esiea.tp4A.game.Mars;
+import com.esiea.tp4A.game.Obstacle;
+import com.esiea.tp4A.game.RoverPosition;
 import org.junit.jupiter.api.Test;
-import java.util.HashSet;
-import java.util.Set;
+
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
