@@ -6,9 +6,10 @@ import com.esiea.tp4A.game.MyRover;
 import com.esiea.tp4A.game.Obstacle;
 import com.esiea.tp4A.game.RoverPosition;
 
+import java.io.Serializable;
 import java.util.Set;
 
-public class Laser {
+public class Laser implements Serializable {
     private final int range;
     private final Mars planet;
     private final RoverPosition roverPosition;
@@ -29,5 +30,9 @@ public class Laser {
             if(myRover.dealShot(laser_position)) return laser_position;
         }
         return laser_position;
+    }
+
+    public int getRange() {
+        return range;
     }
 }

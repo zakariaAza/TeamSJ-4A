@@ -2,9 +2,10 @@ package com.esiea.tp4A.game;
 
 import com.esiea.tp4A.domain.*;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class RandomGame {
+public class RandomGame implements Serializable {
 
     public int getRandomIntFromList(List list){
         Random rand = new Random();
@@ -37,14 +38,14 @@ public class RandomGame {
         return obstacles;
     }
 
-    public MyRover generateRandomRover(TheGame theGame, Set<Obstacle> obstacles, Set<MyRover> rovers, int laserRange, Mars map, String player){
+    public MyRover generateRandomRover(TheGame theGame, Set<Obstacle> obstacles, HashMap<String, MyRover> rovers, int laserRange, Mars map, String player){
         if(rovers.size() == 50) return null;
         for(int i = 0; i < 10; i++){ // Nb of attempts
             Direction randomDirection = Direction.values()[new Random().nextInt(Direction.values().length)];
             Obstacle player_position = new Obstacle(getRandomIntWithinRange(map.getLimit_neg(), map.getLimit_pos()), getRandomIntWithinRange(map.getLimit_neg(), map.getLimit_pos()));
             if(obstacles.contains(player_position)) continue;
             MyRover rover = new MyRover(theGame, player_position.getX(), player_position.getY(), randomDirection, laserRange, map, player);
-            if(rovers.contains(rover)) continue;
+            if(rovers.containsKey(rover.getPlayer())) continue;
             else return rover;
         }
         return null;

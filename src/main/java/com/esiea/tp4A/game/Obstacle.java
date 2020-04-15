@@ -2,7 +2,9 @@ package com.esiea.tp4A.game;
 
 import com.esiea.tp4A.domain.Position;
 
-public class Obstacle {
+import java.io.Serializable;
+
+public class Obstacle implements Serializable {
     private final int x;
     private final int y;
 

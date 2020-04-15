@@ -1,5 +1,7 @@
 package com.esiea.tp4A.domain;
 
+import java.io.Serializable;
+
 public interface Position {
 
     int getX();
@@ -9,7 +11,7 @@ public interface Position {
     static Position of(int x, int y, Direction direction) { return new FixedPosition(x, y, direction);
     }
 
-    final class FixedPosition implements Position {
+    final class FixedPosition implements Position, Serializable {
 
         private final int x;
         private final int y;

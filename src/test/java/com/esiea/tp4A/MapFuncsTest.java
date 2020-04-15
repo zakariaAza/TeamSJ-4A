@@ -4,6 +4,7 @@ import com.esiea.tp4A.domain.*;
 import com.esiea.tp4A.game.*;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -36,7 +37,9 @@ public class MapFuncsTest {
     void roversComparaison(){
         Mars mars = new Mars(100, Stream.of(new Obstacle(0,1)).collect(Collectors.toSet()));
         MyRover myRover = new MyRover(new TheGame(mars), 0, 1, Direction.NORTH, 5, mars, "");
-        Set<MyRover> rovers = mapFuncs.comparePointsToRovers(Stream.of(myRover).collect(Collectors.toSet()), Stream.of(new CircularPoint(0,1,100)).collect(Collectors.toSet()));
+        HashMap<String, MyRover> testHasp = new HashMap<String, MyRover>();
+        testHasp.put("", myRover);
+        Set<MyRover> rovers = mapFuncs.comparePointsToRovers(testHasp, Stream.of(new CircularPoint(0,1,100)).collect(Collectors.toSet()));
             for(MyRover rover : rovers){
                 assertThat(rover.getPosition().getX()).as("RoverPositionX").isEqualTo(0);
                 assertThat(rover.getPosition().getY()).as("RoverPositionY").isEqualTo(1);

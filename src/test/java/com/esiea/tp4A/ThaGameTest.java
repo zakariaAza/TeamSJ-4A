@@ -10,7 +10,6 @@ import java.util.Set;
 public class ThaGameTest {
     private final RandomGame randomGame = new RandomGame();
     private final int mapsize = randomGame.getRandomMapSize();
-    private final int laserRange = randomGame.getRandomLaserRange();
     private final Set<Obstacle> obstacles = randomGame.generateObstaclesPosition(mapsize,(0-(mapsize/2)+1), mapsize/2);
     private final Mars planetMap = new Mars(mapsize, obstacles);
     private final TheGame theGame = new TheGame(planetMap);
@@ -41,9 +40,8 @@ public class ThaGameTest {
     @Test
     void checkPlayerMove(){
         theGame.createPlayer("Player3");
-        Position position = theGame.playerMove("Player3", "f");
-        Direction direction = position.getDirection();
-        assertThat(direction).as("checkPlayerMove").isEqualTo(direction);
+        MyRover rover = theGame.playerMove("Player3", "f");
+        assertThat(rover.getPlayer()).as("checkPlayerMove").isEqualTo("Player3");
     }
 
     @Test
