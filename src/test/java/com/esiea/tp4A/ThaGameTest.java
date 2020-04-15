@@ -1,15 +1,11 @@
 package com.esiea.tp4A;
 
 import com.esiea.tp4A.domain.*;
-import com.esiea.tp4A.roverApi.LocalMap;
-import com.esiea.tp4A.roverApi.RandomGame;
-import com.esiea.tp4A.roverApi.TheGame;
+import com.esiea.tp4A.game.*;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ThaGameTest {
     private final RandomGame randomGame = new RandomGame();
@@ -54,7 +50,7 @@ public class ThaGameTest {
     void checkLocalMap(){
         MyRover myRover = theGame.createPlayer("Player4");
         LocalMap localMap = theGame.getPlayerLocalMap("Player4", 1);
-        assertThat(localMap.getObstacles().size()).as("getObstacles").isEqualTo(0);
+        assertThat(localMap.getObstacles().size()).as("getObstacles").isIn(0,1);
         for (MyRover rover : localMap.getPlayers()){
             assertThat(rover.getPosition().getX()).as("getPlayers").isEqualTo(myRover.getPosition().getX());
         }

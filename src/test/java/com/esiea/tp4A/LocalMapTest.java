@@ -1,12 +1,8 @@
 package com.esiea.tp4A;
 
 import com.esiea.tp4A.domain.*;
-import com.esiea.tp4A.roverApi.LocalMap;
-import com.esiea.tp4A.roverApi.TheGame;
-import org.assertj.core.api.Assertions;
+import com.esiea.tp4A.game.*;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.HashSet;
 import java.util.Set;
