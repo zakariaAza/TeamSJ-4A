@@ -2,8 +2,6 @@ package com.esiea.tp4A.game;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.security.PrivateKey;
-
 public class PlayerOuput {
     private final MyRover player;
     private final LocalMap localMap;

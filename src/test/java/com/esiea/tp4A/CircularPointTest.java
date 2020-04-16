@@ -1,13 +1,13 @@
 package com.esiea.tp4A;
 
-import com.esiea.tp4A.game.CircularPoint;
 import com.esiea.tp4A.domain.Direction;
 import com.esiea.tp4A.domain.Position;
+import com.esiea.tp4A.game.CircularPoint;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class CircularPointTest {
-final private  CircularPoint cP = new CircularPoint(1, 2, 10);
+final private CircularPoint cP = new CircularPoint(1, 2, 10);
 
     @Test
     void test_cicular_get() {

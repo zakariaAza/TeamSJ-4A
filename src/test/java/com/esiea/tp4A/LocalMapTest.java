@@ -18,7 +18,7 @@ class LocalMapTest {
         Mars mars = new Mars(100, Stream.of(new Obstacle(0,1)).collect(Collectors.toSet()));
 
         Set<MyRover> roverSet = new HashSet<>();
-        roverSet.add( new MyRover(new TheGame(mars), 0, 1, Direction.NORTH, 5, mars, ""));
+        roverSet.add( new MyRover(new TheGame("test",mars), 0, 1, Direction.NORTH, 5, mars, ""));
 
         Set<Obstacle> obstacleSet = new HashSet<>();
         obstacleSet.add( new Obstacle(0,1) );

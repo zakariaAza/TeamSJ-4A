@@ -1,10 +1,6 @@
 package com.esiea.tp4A.game;
 
 import com.esiea.tp4A.domain.Position;
-import com.esiea.tp4A.game.Mars;
-import com.esiea.tp4A.game.MyRover;
-import com.esiea.tp4A.game.Obstacle;
-import com.esiea.tp4A.game.RoverPosition;
 
 import java.io.Serializable;
 import java.util.Set;

@@ -2,7 +2,6 @@ package com.esiea.tp4A.game;
 
 import com.esiea.tp4A.domain.PlanetMap;
 import com.esiea.tp4A.domain.Position;
-import com.esiea.tp4A.game.Obstacle;
 
 import java.io.Serializable;
 import java.util.HashSet;
