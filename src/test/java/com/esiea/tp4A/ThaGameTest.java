@@ -12,7 +12,7 @@ public class ThaGameTest {
     private final int mapsize = randomGame.getRandomMapSize();
     private final Set<Obstacle> obstacles = randomGame.generateObstaclesPosition(mapsize,(0-(mapsize/2)+1), mapsize/2);
     private final Mars planetMap = new Mars(mapsize, obstacles);
-    private final TheGame theGame = new TheGame(planetMap);
+    private final TheGame theGame = new TheGame("game",planetMap);
 
    @Test
    void checkPlayerPosition(){

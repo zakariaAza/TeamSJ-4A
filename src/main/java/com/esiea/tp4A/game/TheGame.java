@@ -4,8 +4,6 @@ import com.esiea.tp4A.domain.*;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public class TheGame implements RoverApi, Serializable {
@@ -13,13 +11,16 @@ public class TheGame implements RoverApi, Serializable {
     private HashMap<String, MyRover> rovers;
     private HashMap<String, MyRover> rovers_bin;
     private final int laserRange;
+    private final String name;
 
-    public TheGame(Mars planetMap) {
+    public TheGame(String name, Mars planetMap) {
+        this.name = name;
         this.planetMap = planetMap;
         this.rovers = new HashMap<>();
         this.rovers_bin = new HashMap<>();
         this.laserRange = new RandomGame().getRandomLaserRange();
     }
+    public String getName() { return name; }
 
     public MyRover retrieveRoverByPlayer (String player){
         if(rovers.get(player) != null) return rovers.get(player);
@@ -48,7 +49,7 @@ public class TheGame implements RoverApi, Serializable {
         retrieveRoverByPlayer(player).move("s");
     }
     public MyRover playerMove(String player ,String command) {
-        retrieveRoverByPlayer(player).move(command);
+        if(retrieveRoverByPlayer(player) != null) retrieveRoverByPlayer(player).move(command);
         return retrieveRoverByPlayer(player);
     }
 

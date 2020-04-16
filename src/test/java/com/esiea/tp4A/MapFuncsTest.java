@@ -36,7 +36,7 @@ public class MapFuncsTest {
     @Test
     void roversComparaison(){
         Mars mars = new Mars(100, Stream.of(new Obstacle(0,1)).collect(Collectors.toSet()));
-        MyRover myRover = new MyRover(new TheGame(mars), 0, 1, Direction.NORTH, 5, mars, "");
+        MyRover myRover = new MyRover(new TheGame("game", mars), 0, 1, Direction.NORTH, 5, mars, "");
         HashMap<String, MyRover> testHasp = new HashMap<String, MyRover>();
         testHasp.put("", myRover);
         Set<MyRover> rovers = mapFuncs.comparePointsToRovers(testHasp, Stream.of(new CircularPoint(0,1,100)).collect(Collectors.toSet()));
