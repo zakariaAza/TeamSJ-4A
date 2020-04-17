@@ -1,6 +1,7 @@
 package com.esiea.tp4A.game;
 
 import com.esiea.tp4A.domain.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -21,7 +22,13 @@ public class TheGame implements RoverApi, Serializable {
     }
 
     public String getName() { return name; }
+
+    @JsonProperty("players")
+    public HashMap<String, MyRover> getRovers() { return rovers; }
+
+    @JsonProperty("Mars")
     public Mars getPlanetMap() { return planetMap; }
+
     public MyRover retrieveRoverByPlayer (String player){
         if(rovers.get(player) != null) return rovers.get(player);
         else if(rovers_bin.get(player) != null) return rovers_bin.get(player);
@@ -60,9 +67,11 @@ public class TheGame implements RoverApi, Serializable {
     public boolean isPlayerAlive(String player) {
         return retrieveRoverByPlayer(player).isAlive();
     }
+
     public void laserShoot(String player){
         retrieveRoverByPlayer(player).move("s");
     }
+
     public MyRover playerMove(String player ,String command) {
         rearrangePlayers();
         if(retrieveRoverByPlayer(player) != null) retrieveRoverByPlayer(player).move(command);

@@ -2,6 +2,8 @@ package com.esiea.tp4A.game;
 
 import com.esiea.tp4A.domain.PlanetMap;
 import com.esiea.tp4A.domain.Position;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -29,7 +31,7 @@ public class Mars implements PlanetMap, Serializable {
     }
 
 
-
+    @JsonProperty("obstacles")
     @Override
     public Set<Obstacle> obstaclePositions() {
         return this.obstacles;
@@ -43,10 +45,11 @@ public class Mars implements PlanetMap, Serializable {
         return size;
     }
 
+    @JsonIgnore
     public int getLimit_pos() {
         return limit_pos;
     }
-
+    @JsonIgnore
     public int getLimit_neg() {
         return limit_neg;
     }
