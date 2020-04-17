@@ -40,7 +40,7 @@ public class RandomGame implements Serializable {
 
     public MyRover generateRandomRover(TheGame theGame, Set<Obstacle> obstacles, HashMap<String, MyRover> rovers, int laserRange, Mars map, String player){
         if(rovers.size() == 50) return null;
-        for(int i = 0; i < 10; i++){ // Nb of attempts
+        while(true){
             Direction randomDirection = Direction.values()[new Random().nextInt(Direction.values().length)];
             Obstacle player_position = new Obstacle(getRandomIntWithinRange(map.getLimit_neg(), map.getLimit_pos()), getRandomIntWithinRange(map.getLimit_neg(), map.getLimit_pos()));
             if(obstacles.contains(player_position)) continue;
@@ -48,6 +48,5 @@ public class RandomGame implements Serializable {
             if(rovers.containsKey(rover.getPlayer())) continue;
             else return rover;
         }
-        return null;
     }
 }

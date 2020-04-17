@@ -7,23 +7,19 @@ import java.util.Set;
 
 public class Laser implements Serializable {
     private final int range;
-    private final Mars planet;
-    private final RoverPosition roverPosition;
-    private final MyRover myRover;
+    private final TheGame game;
 
-    public Laser(int range, Mars planet, MyRover myRover) {
+    public Laser(int range, TheGame game) {
         this.range = range;
-        this.planet = planet;
-        this.roverPosition = new RoverPosition(planet);
-        this.myRover = myRover;
+        this.game = game;
     }
 
-    public Position shoot(Position roverPosition){
-        Position laser_position = roverPosition;
-        Set<Obstacle> obstacles = this.planet.obstaclePositions();
+    public Position shoot(Position playerPosition){
+        Position laser_position = playerPosition;
+        RoverPosition roverPosition = new RoverPosition(this.game.getPlanetMap());
         for (int i = 0; i < range; i++) {
-            laser_position = this.roverPosition.forward(laser_position, true);
-            if(myRover.dealShot(laser_position)) return laser_position;
+            laser_position = roverPosition.forward(laser_position, true);
+            if(game.dealShot(laser_position)) return laser_position;
         }
         return laser_position;
     }

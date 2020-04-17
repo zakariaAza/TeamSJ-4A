@@ -146,4 +146,24 @@ public class MarsRoverTest {
         Assertions.assertThat(marsRover.move("f").getX()).as("RoverInterfaceMove").isEqualTo(0);
     }
 
+    @Test
+    void RoverLaserShot(){
+        Mars mars = new Mars(100, Stream.of(new Obstacle(0,5), new Obstacle(0,6)).collect(Collectors.toSet()));
+        TheGame theGame = new TheGame("game",mars);
+        MyRover marsRover2 = new MyRover(theGame, 0, 1, Direction.NORTH, 5, mars, "r2");
+        MyRover marsRover1 = new MyRover(theGame, 0, 0, Direction.NORTH, 5, mars, "r1");
+        theGame.addPlayer(marsRover1);
+        theGame.addPlayer(marsRover2);
+        theGame.playerMove("r1", "s");
+        theGame.playerMove("r1", "f");
+        Assertions.assertThat(theGame.retrieveRoverByPlayer("r2").isAlive()).as("RoverLaserShot").isFalse();
+    }
+
+    @Test
+    void GameCheckUnknownPLayer(){
+        Mars mars = new Mars(100, Stream.of(new Obstacle(0,5), new Obstacle(0,6)).collect(Collectors.toSet()));
+        TheGame theGame = new TheGame("game",mars);
+        Assertions.assertThat(theGame.retrieveRoverByPlayer("r1")).as("GameCheckUnknownPLayer").isNull();
+    }
+
 }

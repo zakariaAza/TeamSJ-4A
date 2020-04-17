@@ -4,28 +4,43 @@ import com.esiea.tp4A.domain.*;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class TheGame implements RoverApi, Serializable {
     private final Mars planetMap;
-    private HashMap<String, MyRover> rovers;
-    private HashMap<String, MyRover> rovers_bin;
+    private HashMap<String, MyRover> rovers = new HashMap<>();
+    private HashMap<String, MyRover> rovers_bin = new HashMap<>();
     private final int laserRange;
     private final String name;
 
     public TheGame(String name, Mars planetMap) {
         this.name = name;
         this.planetMap = planetMap;
-        this.rovers = new HashMap<>();
-        this.rovers_bin = new HashMap<>();
         this.laserRange = new RandomGame().getRandomLaserRange();
     }
-    public String getName() { return name; }
 
+    public String getName() { return name; }
+    public Mars getPlanetMap() { return planetMap; }
     public MyRover retrieveRoverByPlayer (String player){
         if(rovers.get(player) != null) return rovers.get(player);
         else if(rovers_bin.get(player) != null) return rovers_bin.get(player);
         else return null;
+    }
+
+    public MyRover checkPlayerByPosition(Position position){
+        for (Map.Entry<String, MyRover> entry : this.rovers.entrySet()) {
+            if(entry.getValue().getPosition().getX()==position.getX() && entry.getValue().getPosition().getY()==position.getY()) return entry.getValue();
+        }return null;
+    }
+
+    public void rearrangePlayers(){
+        for (Map.Entry<String, MyRover> entry : this.rovers.entrySet()) {
+            if(!entry.getValue().isAlive()) {
+                this.rovers_bin.put(entry.getValue().getPlayer(), entry.getValue());
+                this.rovers.remove(entry.getValue());
+            }
+        }
     }
 
     public Position getPosition(String player){
@@ -49,6 +64,7 @@ public class TheGame implements RoverApi, Serializable {
         retrieveRoverByPlayer(player).move("s");
     }
     public MyRover playerMove(String player ,String command) {
+        rearrangePlayers();
         if(retrieveRoverByPlayer(player) != null) retrieveRoverByPlayer(player).move(command);
         return retrieveRoverByPlayer(player);
     }
@@ -59,10 +75,20 @@ public class TheGame implements RoverApi, Serializable {
         return myRover;
     }
 
+    public void addPlayer(MyRover rover){
+        if(retrieveRoverByPlayer(rover.getPlayer()) == null) this.rovers.put(rover.getPlayer(), rover);
+    }
+
+    public boolean dealShot(Position position){
+        if(this.planetMap.isObstacle(position)){
+            this.planetMap.removeObstacle(new Obstacle(position.getX(), position.getY())); return true; // délégation à theGame ?
+        }else if(checkPlayerByPosition(position) != null){
+            deletePlayer(checkPlayerByPosition(position).getPlayer()); return true;
+        }else return false;
+    }
+
     public void deletePlayer(String player){
         MyRover rover = retrieveRoverByPlayer(player);
         rover.setAlive(false);
-        this.rovers_bin.put(player, rover);
-        this.rovers.remove(rover);
     }
 }
