@@ -12,3 +12,14 @@
 * Pour garantir une authentification propre et épurée chaque joueur pourra se connecter avec son login et mot de passe. Pour ne pas perdre les multiples récompenses et autres bonus inédits gagnés après un dur travail de destruction des joueurs adverses une sauvegarde automatique sera mise en place. 
 
 * Afin de gérer toute charge potentielle imprévue, nous veillerons à anticiper au mieux en mettant en place le hardware nécessaire pour le/les serveurs utilisés. 
+
+# Architecture du Mars Rover
+
+Nous avons utilisé un serveur HTTP qui servira du JSON pour interagir avec les joueurs.
+
+Vous trouverez ci-dessous la structure de notre API, avec les différentes méthodes de requêtes utilisable en fonction de l'action que l'on souhaite réaliser sur la ressource.
+
+
+
+
+![Architecture(2)](https://user-images.githubusercontent.com/49559351/79643122-a8cdd180-81a1-11ea-874c-a1026fe3f79f.png)
