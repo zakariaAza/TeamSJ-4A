@@ -15,11 +15,9 @@
 
 # Architecture du Mars Rover
 
-Nous avons utilisé un serveur HTTP qui servira du JSON pour interagir avec les joueurs.
+Nous avons implémenté un serveur HTTP qui servira du JSON pour interagir avec les joueurs.
 
 Vous trouverez ci-dessous la structure de notre API, avec les différentes méthodes de requêtes utilisable en fonction de l'action que l'on souhaite réaliser sur la ressource.
 
 
-
-
-![Architecture(2)](https://user-images.githubusercontent.com/49559351/79643122-a8cdd180-81a1-11ea-874c-a1026fe3f79f.png)
+![Architecture](https://user-images.githubusercontent.com/49559351/79645243-652d9480-81ae-11ea-84fb-02b452e2fbff.png)
